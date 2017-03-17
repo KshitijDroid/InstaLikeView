@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.View;
@@ -88,6 +90,14 @@ public class InstaLikeView extends RelativeLayout {
         });
 
         animatorSet.start();
+    }
+
+    public void setLikeResource(@DrawableRes int resource) {
+        mImageHeart.setImageResource(resource);
+    }
+
+    public void setLikeDrawable(Drawable drawable) {
+        mImageHeart.setImageDrawable(drawable);
     }
 
 }

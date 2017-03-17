@@ -3,6 +3,8 @@
 
 A simple library to add like animation similar to instagram.
 
+<img src="https://github.com/Kshitij-Jain/InstaLikeView/blob/master/screenshots/video.gif" width="256">
+
 ### Download
 
 #### Step 1. Add the JitPack repository to your build file
@@ -38,7 +40,7 @@ allprojects {
 
 ```
 dependencies{
-    compile 'com.github.Kshitij-Jain:InstaLikeView:1.0'
+    compile 'com.github.Kshitij-Jain:InstaLikeView:1.05'
 }
 
 ```
@@ -49,7 +51,7 @@ dependencies{
 <dependency>
     <groupId>com.github.Kshitij-Jain</groupId>
     <artifactId>InstaLikeView</artifactId>
-    <version>1.0</version>
+    <version>1.05</version>
 </dependency>
 ```
 

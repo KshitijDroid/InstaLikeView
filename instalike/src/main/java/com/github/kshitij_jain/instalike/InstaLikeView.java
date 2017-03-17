@@ -69,30 +69,26 @@ public class InstaLikeView extends RelativeLayout {
 
         AnimatorSet animatorSet = new AnimatorSet();
 
-        ObjectAnimator heartScaleUpYAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_Y, 0f, 1f);
-        heartScaleUpYAnimator.setDuration(400);
-        heartScaleUpYAnimator.setInterpolator(new OvershootInterpolator());
+        ObjectAnimator likeScaleUpYAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_Y, 0f, 1f);
+        likeScaleUpYAnimator.setDuration(400);
+        likeScaleUpYAnimator.setInterpolator(new OvershootInterpolator());
 
-        ObjectAnimator heartScaleUpXAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_X, 0f, 1f);
-        heartScaleUpXAnimator.setDuration(400);
-        heartScaleUpXAnimator.setInterpolator(new OvershootInterpolator());
+        ObjectAnimator likeScaleUpXAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_X, 0f, 1f);
+        likeScaleUpXAnimator.setDuration(400);
+        likeScaleUpXAnimator.setInterpolator(new OvershootInterpolator());
 
-        ObjectAnimator heartScaleDownYAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_Y, 1f, 0f);
-        heartScaleDownYAnimator.setDuration(100);
-        heartScaleDownYAnimator.setStartDelay(400);
-        heartScaleDownYAnimator.setInterpolator(new LinearInterpolator());
+        ObjectAnimator likeScaleDownYAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_Y, 1f, 0f);
+        likeScaleDownYAnimator.setDuration(100);
 
-        ObjectAnimator heartScaleDownXAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_X, 1f, 0f);
-        heartScaleDownXAnimator.setDuration(100);
-        heartScaleDownXAnimator.setStartDelay(400);
-        heartScaleDownXAnimator.setInterpolator(new LinearInterpolator());
+        ObjectAnimator likeScaleDownXAnimator = ObjectAnimator.ofFloat(mImageHeart, ImageView.SCALE_X, 1f, 0f);
+        likeScaleDownXAnimator.setDuration(100);
 
-        animatorSet.playTogether(heartScaleUpXAnimator,
-                heartScaleUpYAnimator);
+        animatorSet.playTogether(likeScaleUpXAnimator,
+                likeScaleUpYAnimator);
 
-        animatorSet.play(heartScaleDownXAnimator).
-                with(heartScaleDownYAnimator).
-                after(heartScaleUpYAnimator);
+        animatorSet.play(likeScaleDownXAnimator).
+                with(likeScaleDownYAnimator).
+                after(800);
 
         animatorSet.addListener(new AnimatorListenerAdapter() {
             @Override

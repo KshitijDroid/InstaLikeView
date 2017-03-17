@@ -5,18 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
     tools:context="com.github.kshitij_jain.instalikesample.MainActivity">
 
     <com.github.kshitij_jain.instalike.InstaLikeView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/circleSize"
+        app:likeColor="@color/colorAccent"
+        android:layout_centerInParent="true"
         android:id="@+id/insta_like_view"/>
 
     <Button
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Animate"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:id="@+id/button"/>
 
 </RelativeLayout>

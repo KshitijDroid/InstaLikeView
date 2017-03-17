@@ -1,5 +1,6 @@
 package com.github.kshitij_jain.instalikesample;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         mInstaLikeView = (InstaLikeView) findViewById(R.id.insta_like_view);
         mButton = (Button) findViewById(R.id.button);
+
+        mInstaLikeView.setLikeColor(ContextCompat.getColor(this, R.color.colorAccent));
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override

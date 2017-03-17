@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InstaLikeView">
+        <attr name="likeColor" format="color" />
+        <attr name="likeSize" format="dimension" />
+        <attr name="likeSrc" format="reference" />
+    </declare-styleable>
+
+</resources>

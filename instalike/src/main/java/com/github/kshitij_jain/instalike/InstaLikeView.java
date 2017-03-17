@@ -5,8 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.View;
@@ -39,14 +42,23 @@ public class InstaLikeView extends RelativeLayout {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         mImageHeart = new AppCompatImageView(context);
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.InstaLikeView,
+                defStyleAttr, 0);
 
-        LayoutParams heartParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        int likeColor = a.getColor(R.styleable.InstaLikeView_likeColor, ContextCompat.getColor(context, R.color.heartColor));
+        int likeSrc = a.getResourceId(R.styleable.InstaLikeView_likeSrc, R.drawable.img_heart);
+        int likeSize = a.getDimensionPixelSize(R.styleable.InstaLikeView_likeSize, getResources().getDimensionPixelSize(R.dimen.likeSize));
+
+
+        LayoutParams heartParams = new LayoutParams(likeSize, likeSize);
         heartParams.addRule(CENTER_IN_PARENT, TRUE);
 
         mImageHeart.setLayoutParams(heartParams);
-        mImageHeart.setScaleType(ImageView.ScaleType.CENTER);
         mImageHeart.setVisibility(GONE);
-        mImageHeart.setImageResource(R.drawable.img_heart);
+        mImageHeart.setImageResource(likeSrc);
+        mImageHeart.setColorFilter(likeColor);
         addView(mImageHeart);
     }
 
@@ -98,6 +110,10 @@ public class InstaLikeView extends RelativeLayout {
 
     public void setLikeDrawable(Drawable drawable) {
         mImageHeart.setImageDrawable(drawable);
+    }
+
+    public void setLikeColor(@ColorInt int color) {
+        mImageHeart.setColorFilter(color);
     }
 
 }
